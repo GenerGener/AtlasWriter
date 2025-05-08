@@ -1,7 +1,11 @@
 # AtlasWriter
 Write transcripts with locus segmentation, alternate start sites, and polyA tails if you feel like it!
 
-TODO: Fix bug in locus segments preceding locus segment 9. Segment 8 was missing.
+TODO: fix alt-start: "$ python3 atlas_writer-5.py --input MZ242719_NL4-3_locus_segments.fasta --include_locus_segment 1-11 --alt_start /397 --polyA 3000/50
+usage: atlas_writer-5.py [-h] --input INPUT [--include_locus_segment INCLUDE_LOCUS_SEGMENT] [--truncate TRUNCATE] [--polyA POLYA] [--output OUTPUT] [--list]
+atlas_writer-5.py: error: unrecognized arguments: --alt_start /397"
+
+Fixed bug in locus segments preceding locus segment 9. Segment 8 was missing.
 
 Corrected segment 7 and segment 8:
 
@@ -330,3 +334,16 @@ AtlasWriter is written in Python and uses the following standard libraries:
 - `sys` for system operations
 
 No external dependencies are required.
+
+## Beta change log:
+
+2025-05-07 5:38ish PM PDT - Fixed bug in locus segments preceding locus segment 9. Segment 8 was missing.
+
+```
+>7
+GTAGGATCTCTACAGTACTTGGCACTAGCAGCATTAATAAAACCAAAACAGATAAAGCCACCTTTGCCTAGTGTTAGGAAACTGACAGAGGACAGATGGAACAAGCCCCAGAAGACCAAGGGCCACAGAGGGAGCCATACAATGAATGGACACTAGAGCTTTTAGAGGAACTTAAGAGTGAAGCTGTTAGACATTTTCCTAGGATATGGCTCCATAACTTAGGACAACATATCTATGAAACTTACGGGGATACTTGGGCAGGAGTGGAAGCCATAATAAGAATTCTGCAACAACTGCTGTTTATCCATTTCAG
+>8
+AATTGGGTGTCGACATAGCAGAATAGGCGTTACTCGACAGAGGAGAGCAAGAAATGGAGCCAGTAGATCCTAGACTAGAGCCCTGGAAGCATCCAGGAAGTCAGCCTAAAACTGCTTGTACCAATTGCTATTGTAAAAAGTGTTGCTTTCATTGCCAAGTTTGTTTCATGACAAAAGCCTTAGGCATCTCCTATGGCAG
+>9
+GAAGAAGCGGAGACAGCGACGAAGAGCTCATCAGAACAGTCAGACTCATCAAGCTTCTCTATCAAAGCA
+```
